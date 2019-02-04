@@ -4,22 +4,23 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 public class ShiritoriTest {
+    private Shiritori shiritori;
 
     @Test
-    public void shouldReturnPartialGame{
-        ArrayList<String> expected = new ArrayList<String>();
+    public void shouldReturnPartialGame(){
+        ArrayList<String> expected = new ArrayList<>();
         expected.add("dog");
         expected.add("goose");
         String[] gameToTest = {"dog","goose","tiger","cat", "elephant","rhino","orc"};
-        shiritori = new Shiritori(gameToTest)
+        shiritori.game = gameToTest;
         ArrayList<String> actual = shiritori.thisGame();
 
         assertEquals("should stop at goose", expected, actual);
     }
 
     @Test
-    public void shouldReturnCompleteGame{
-        ArrayList<String> expected = new ArrayList<String>();
+    public void shouldReturnCompleteGame(){
+        ArrayList<String> expected = new ArrayList<>();
         expected.add("dog");
         expected.add("goose");
         expected.add("elephant");
